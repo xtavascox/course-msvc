@@ -1,5 +1,3 @@
-version: '4'
-
 services:
   POSTGRES:
     image: postgres
@@ -10,7 +8,7 @@ services:
     environment:
       - POSTGRES_USER=alumno
       - POSTGRES_PASSWORD=123456
-      - POSTGRES_DB=course-db
+      - POSTGRES_DB=coursesDb
     volumes:
       - ./volumes/postgres:/var/lib/postgresql/data
 
@@ -22,7 +20,8 @@ services:
       - 3306:3306
     environment:
       - MYSQL_USER=alumno
+      - MYSQL_PASSWORD=123456
       - MYSQL_ROOT_PASSWORD=123456
-      - MYSQL_DATABASE=course-db
+      - MYSQL_DATABASE=studentsDb
     volumes:
-        - ./volumes/mysql:/var/lib/mysql
+      - ./volumes/mysql:/var/lib/mysql
